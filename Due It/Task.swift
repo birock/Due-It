@@ -10,7 +10,7 @@ import UIKit
 
 class Task: NSObject {
     var taskName: String; //name of the task itself
-    var urgerncyCode: Int; //how important the task is
+    var urgencyCode: Int; //how important the task is
     var dateCode: Int; //how close is the task to the due date?
     var taskCode: Int;
     var dueDate: Date; //when the task needs to be completed by
@@ -21,7 +21,7 @@ class Task: NSObject {
      */
     init(name: String, urgency: Int, date: Date) {
         self.taskName = name;
-        self.urgerncyCode = urgency;
+        self.urgencyCode = urgency;
         self.dueDate = date;
         self.dateCode = 0;
         self.taskCode = 0;
@@ -30,7 +30,7 @@ class Task: NSObject {
     
     func getTaskCode() -> Int{
         //the code to determine the color is based on the urgency + date
-        taskCode = (self.urgerncyCode + self.dateCode);
+        taskCode = (self.urgencyCode + self.dateCode);
         return taskCode;
     }
     
@@ -59,6 +59,7 @@ class Task: NSObject {
     }
     
     func getTaskColor() -> UIColor{
+        
         /*
         * Ben, for this I'm thinking of coming up with an array of 10 preset colors based on task code.
         * That way, you can save the RBG or Hex values, and quickly return them in this method. Let me know
@@ -66,7 +67,20 @@ class Task: NSObject {
         * -- Dan
         */
         
-        return UIColor.green;
+        var colors: Array<UIColor> = Array();
+        
+        for i in 1...5 {
+            UIColor color = init(red: 0, green: (10 - 10*(i/5)), blue: 0, alpha: 1.0);
+            colors.append(color);
+        }
+        
+        for i in 6...10 {
+            UIColor color = init(red: (10*(i/5)), green: 0, blue: 0, alpha: 1.0);
+            colors.append(color);
+        }
+        
+        return colors[self.taskCode];
+        
     }
     
     func getTaskName() -> String{
