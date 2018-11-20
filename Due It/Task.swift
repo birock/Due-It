@@ -70,12 +70,12 @@ class Task: NSObject {
         var colors: Array<UIColor> = Array();
         
         for i in 1...5 {
-            UIColor color = init(red: 0, green: (10 - 10*(i/5)), blue: 0, alpha: 1.0);
+            UIColor color = init(red: (10*(i/5)), green: 1.0, blue: 0, alpha: 1.0);
             colors.append(color);
         }
         
         for i in 6...10 {
-            UIColor color = init(red: (10*(i/5)), green: 0, blue: 0, alpha: 1.0);
+            UIColor color = init(red: 1.0, green: (10 - 10*(i/5)), blue: 0, alpha: 1.0);
             colors.append(color);
         }
         
