@@ -5,7 +5,6 @@
 //  Created by Dan McKenna on 11/18/18.
 //  Copyright © 2018 Due It. All rights reserved.
 //
-
 import UIKit
 
 class Task: NSObject {
@@ -61,21 +60,21 @@ class Task: NSObject {
     func getTaskColor() -> UIColor{
         
         /*
-        * Ben, for this I'm thinking of coming up with an array of 10 preset colors based on task code.
-        * That way, you can save the RBG or Hex values, and quickly return them in this method. Let me know
-        * what you think!
-        * -- Dan
-        */
+         * Ben, for this I'm thinking of coming up with an array of 10 preset colors based on task code.
+         * That way, you can save the RBG or Hex values, and quickly return them in this method. Let me know
+         * what you think!
+         * -- Dan
+         */
         
         var colors: Array<UIColor> = Array();
         
         for i in 1...5 {
-            UIColor color = init(red: (10*(i/5)), green: 1.0, blue: 0, alpha: 1.0);
+            let color = UIColor(red: (CGFloat(10*(i/5))), green: 1.0, blue: 0, alpha: 1.0);
             colors.append(color);
         }
         
         for i in 6...10 {
-            UIColor color = init(red: 1.0, green: (10 - 10*(i/5)), blue: 0, alpha: 1.0);
+            let color = UIColor(red: 1.0, green: (CGFloat(10 - 10*(i/5))), blue: 0, alpha: 1.0);
             colors.append(color);
         }
         
