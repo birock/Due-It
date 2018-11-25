@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5B929BCF21A9B69A00CCA9F7 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B929BCE21A9B69A00CCA9F7 /* Task.swift */; };
-		5B929BD521A9C6A800CCA9F7 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B929BD421A9C6A800CCA9F7 /* AddTaskViewController.swift */; };
+		5B935B1621AA2E92004ED88C /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B935B1521AA2E92004ED88C /* AddTaskViewController.swift */; };
 		61DD3FDB219A2D4A00020E7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DD3FDA219A2D4A00020E7B /* AppDelegate.swift */; };
 		61DD3FDD219A2D4A00020E7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DD3FDC219A2D4A00020E7B /* ViewController.swift */; };
 		61DD3FE0219A2D4A00020E7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61DD3FDE219A2D4A00020E7B /* Main.storyboard */; };
@@ -37,7 +37,7 @@
 
 /* Begin PBXFileReference section */
 		5B929BCE21A9B69A00CCA9F7 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
-		5B929BD421A9C6A800CCA9F7 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		5B935B1521AA2E92004ED88C /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		61DD3FD7219A2D4A00020E7B /* Due It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Due It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61DD3FDA219A2D4A00020E7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61DD3FDC219A2D4A00020E7B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,11 +101,11 @@
 		61DD3FD9219A2D4A00020E7B /* Due It */ = {
 			isa = PBXGroup;
 			children = (
-				5B929BD421A9C6A800CCA9F7 /* AddTaskViewController.swift */,
 				61DD3FDA219A2D4A00020E7B /* AppDelegate.swift */,
 				61DD3FDC219A2D4A00020E7B /* ViewController.swift */,
 				5B929BCE21A9B69A00CCA9F7 /* Task.swift */,
 				61DD3FDE219A2D4A00020E7B /* Main.storyboard */,
+				5B935B1521AA2E92004ED88C /* AddTaskViewController.swift */,
 				61DD3FE1219A2D4D00020E7B /* Assets.xcassets */,
 				61DD3FE3219A2D4D00020E7B /* LaunchScreen.storyboard */,
 				61DD3FE6219A2D4D00020E7B /* Info.plist */,
@@ -199,6 +199,7 @@
 				TargetAttributes = {
 					61DD3FD6219A2D4A00020E7B = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1010;
 					};
 					61DD3FEA219A2D4D00020E7B = {
 						CreatedOnToolsVersion = 10.1;
@@ -263,7 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B929BCF21A9B69A00CCA9F7 /* Task.swift in Sources */,
-				5B929BD521A9C6A800CCA9F7 /* AddTaskViewController.swift in Sources */,
+				5B935B1621AA2E92004ED88C /* AddTaskViewController.swift in Sources */,
 				61DD3FDD219A2D4A00020E7B /* ViewController.swift in Sources */,
 				61DD3FDB219A2D4A00020E7B /* AppDelegate.swift in Sources */,
 			);
@@ -440,6 +441,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Due It/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -448,6 +450,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "edu.nyu.Due-It";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -457,6 +460,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Due It/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
