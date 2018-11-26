@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5B4090AC21ABB2A400CCA3DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5B4090AB21ABB2A400CCA3DA /* GoogleService-Info.plist */; };
+		5B58384B21ACA68C00D8511E /* DueIt_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B58384A21ACA68C00D8511E /* DueIt_Logo.png */; };
+		5B58384D21ACA88500D8511E /* DueItLogo_Launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B58384C21ACA88500D8511E /* DueItLogo_Launch.png */; };
+		5B58384F21ACA8F100D8511E /* DueItLogo_Launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 5B58384E21ACA8F100D8511E /* DueItLogo_Launch.png */; };
 		5B929BCF21A9B69A00CCA9F7 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B929BCE21A9B69A00CCA9F7 /* Task.swift */; };
 		5B935B1621AA2E92004ED88C /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B935B1521AA2E92004ED88C /* AddTaskViewController.swift */; };
 		61DD3FDB219A2D4A00020E7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DD3FDA219A2D4A00020E7B /* AppDelegate.swift */; };
@@ -44,6 +47,9 @@
 		310538CF4759871C35083027 /* Pods-Due It.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Due It.release.xcconfig"; path = "Pods/Target Support Files/Pods-Due It/Pods-Due It.release.xcconfig"; sourceTree = "<group>"; };
 		59C73E4BB5AF51A4457F823D /* Pods_Due_ItUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Due_ItUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B4090AB21ABB2A400CCA3DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5B58384A21ACA68C00D8511E /* DueIt_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DueIt_Logo.png; path = Assets.xcassets/DueIt_Logo.imageset/DueIt_Logo.png; sourceTree = "<group>"; };
+		5B58384C21ACA88500D8511E /* DueItLogo_Launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DueItLogo_Launch.png; path = ../../DueItLogo_Launch.png; sourceTree = "<group>"; };
+		5B58384E21ACA8F100D8511E /* DueItLogo_Launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DueItLogo_Launch.png; path = ../../DueItLogo_Launch.png; sourceTree = "<group>"; };
 		5B929BCE21A9B69A00CCA9F7 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		5B935B1521AA2E92004ED88C /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		61DD3FD7219A2D4A00020E7B /* Due It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Due It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,7 +141,10 @@
 				5B929BCE21A9B69A00CCA9F7 /* Task.swift */,
 				61DD3FDE219A2D4A00020E7B /* Main.storyboard */,
 				5B935B1521AA2E92004ED88C /* AddTaskViewController.swift */,
+				5B58384A21ACA68C00D8511E /* DueIt_Logo.png */,
 				61DD3FE1219A2D4D00020E7B /* Assets.xcassets */,
+				5B58384C21ACA88500D8511E /* DueItLogo_Launch.png */,
+				5B58384E21ACA8F100D8511E /* DueItLogo_Launch.png */,
 				61DD3FE3219A2D4D00020E7B /* LaunchScreen.storyboard */,
 				61DD3FE6219A2D4D00020E7B /* Info.plist */,
 				5B4090AB21ABB2A400CCA3DA /* GoogleService-Info.plist */,
@@ -284,8 +293,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				61DD3FE5219A2D4D00020E7B /* LaunchScreen.storyboard in Resources */,
+				5B58384D21ACA88500D8511E /* DueItLogo_Launch.png in Resources */,
 				5B4090AC21ABB2A400CCA3DA /* GoogleService-Info.plist in Resources */,
+				5B58384F21ACA8F100D8511E /* DueItLogo_Launch.png in Resources */,
 				61DD3FE2219A2D4D00020E7B /* Assets.xcassets in Resources */,
+				5B58384B21ACA68C00D8511E /* DueIt_Logo.png in Resources */,
 				61DD3FE0219A2D4A00020E7B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

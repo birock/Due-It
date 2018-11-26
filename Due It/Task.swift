@@ -82,18 +82,18 @@ class Task: NSObject {
         var colors = [UIColor]()
         
         for i in 1...5 {
-            var color = UIColor(red: (CGFloat(Float(i)/5.0)), green: 1.0, blue: 0, alpha: 1.0)
+            var color = UIColor(red: (CGFloat(Float(i)/5.0)), green: 1.0, blue: 0, alpha: 0.7)
             colors.append(color);
             print((Float(i)/5.0))
         }
         
         for i in 1...5 {
-            var color = UIColor(red: 1.0, green: (CGFloat(1.0-(Float(i)/5.0))), blue: 0, alpha: 1.0)
+            var color = UIColor(red: 1.0, green: (CGFloat(1.0-(Float(i)/5.0))), blue: 0, alpha: 0.7)
             colors.append(color)
             print(1.0-(Float(i)/5.0))
         }
         
-        return colors[self.getTaskCode()]
+        return colors[self.getTaskCode()-1]
         
     }
     

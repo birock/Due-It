@@ -89,6 +89,9 @@
                                 <date key="date" timeIntervalSinceReferenceDate="563308493.62111104">
                                     <!--2018-11-07 18:34:53 +0000-->
                                 </date>
+                                <connections>
+                                    <action selector="changeDate:" destination="gLc-zw-Sgl" eventType="valueChanged" id="VM7-Vl-Joj"/>
+                                </connections>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Urgency" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahN-pB-RNK">
                                 <rect key="frame" x="143" y="427" width="128" height="42"/>
@@ -124,10 +127,11 @@
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="What is your task?" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sn0-Ph-JHo">
                                 <rect key="frame" x="54" y="105" width="312" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <accessibility key="accessibilityConfiguration" identifier="AddTaskViewController">
                                     <accessibilityTraits key="traits" allowsDirectInteraction="YES"/>
                                 </accessibility>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="1" green="0.57810515169999999" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
@@ -140,6 +144,9 @@
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" adjustable="YES" allowsDirectInteraction="YES"/>
                                 </accessibility>
+                                <connections>
+                                    <action selector="changeUrgency:" destination="gLc-zw-Sgl" eventType="valueChanged" id="hhA-Rd-xg2"/>
+                                </connections>
                             </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -155,7 +162,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M8z-fD-yC3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="u8i-2U-4Em" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1071.0144927536232" y="132.58928571428572"/>
+            <point key="canvasLocation" x="1019" y="133"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

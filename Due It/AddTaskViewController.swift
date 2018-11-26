@@ -16,6 +16,16 @@ class AddTaskViewController: UIViewController {
     @IBOutlet weak var dateInput: UIDatePicker!
     @IBOutlet weak var urgencyInput: UISlider!
     
+    @IBAction func changeUrgency(_ sender: Any) {
+        let newTask = Task(name: input.text!, urgency: Int(urgencyInput.value), date: dateInput.date)
+        view.backgroundColor = newTask.getTaskColor()
+    }
+    
+    @IBAction func changeDate(_ sender: Any) {
+        let newTask = Task(name: input.text!, urgency: Int(urgencyInput.value), date: dateInput.date)
+        view.backgroundColor = newTask.getTaskColor()
+    }
+    
     @IBAction func add_item(_ sender: Any) {
         
         if (input.text != "") {
@@ -29,9 +39,8 @@ class AddTaskViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-
         // Do any additional setup after loading the view.
+        
     }
     
     
