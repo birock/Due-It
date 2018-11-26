@@ -8,7 +8,8 @@
 
 import UIKit
 
-var list = ["Write essay", "Do laundry", "Read chapter 3", "Call mom"];
+var list = [String]()
+var numFinished = 0
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -21,7 +22,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let task = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "Task")
-        task.backgroundColor = UIColor(red: 1.0, green: 0, blue: 0, alpha: 0)
+        task.backgroundColor = userTasks[indexPath.row].getTaskColor()
         task.textLabel?.text = tasks[indexPath.row]
 
         return(task)
@@ -30,6 +31,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableview: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
             self.tasks.remove(at: indexPath.row)
+            numFinished += 1
+            print("Tasks Completed: ", numFinished)
+            list = tasks
             myTableView.reloadData()
         }
     }

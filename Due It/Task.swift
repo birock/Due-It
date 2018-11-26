@@ -29,31 +29,44 @@ class Task: NSObject {
     
     func getTaskCode() -> Int{
         //the code to determine the color is based on the urgency + date
-        taskCode = (self.urgencyCode + self.dateCode);
+        taskCode = (self.urgencyCode + self.getDateCode());
+        print("Task code: ", taskCode)
         return taskCode;
     }
     
     func getDateCode() -> Int{
         //retrieve the amount of days between now and the due date, so everytime this
         // method is called it returns the updated code and updates the field in the object itself.
-        let daysBetween = Calendar.current.component(.day, from: self.dueDate);
         
-        if(daysBetween >= 14){
+        let currentDate = Date()
+        
+        //let daysBetween = Calendar.current.component(.day, fromDate: currentDate, toDate: self.dueDate, options: [])
+        var set = Set<Calendar.Component>()
+        set.insert(.day)
+        let daysBetween = Calendar.current.dateComponents(set, from: currentDate, to: dueDate)
+        
+        //let asd = Calendar.current.co
+        //let a = Calendar.current.compo
+        //let a = Calendar.current.com
+        
+        if(daysBetween.day! >= 14){
             self.dateCode = 1;
         }
-        else if(daysBetween >= 7){
+        else if(daysBetween.day! >= 7){
             self.dateCode = 2;
         }
-        else if(daysBetween >= 5){
+        else if(daysBetween.day! >= 5){
             self.dateCode = 3;
         }
-        else if(daysBetween >= 3){
+        else if(daysBetween.day! >= 3){
             self.dateCode = 4;
         }
         else{
             self.dateCode = 5;
         }
         
+        print("Date code: ", self.dateCode)
+        print("Days between: ", daysBetween)
         return self.dateCode;
     }
     
@@ -66,19 +79,21 @@ class Task: NSObject {
          * -- Dan
          */
         
-        var colors: Array<UIColor> = Array();
+        var colors = [UIColor]()
         
         for i in 1...5 {
-            let color = UIColor(red: (CGFloat(10*(i/5))), green: 1.0, blue: 0, alpha: 1.0);
+            var color = UIColor(red: (CGFloat(Float(i)/5.0)), green: 1.0, blue: 0, alpha: 1.0)
             colors.append(color);
+            print((Float(i)/5.0))
         }
         
-        for i in 6...10 {
-            let color = UIColor(red: 1.0, green: (CGFloat(10 - 10*(i/5))), blue: 0, alpha: 1.0);
-            colors.append(color);
+        for i in 1...5 {
+            var color = UIColor(red: 1.0, green: (CGFloat(1.0-(Float(i)/5.0))), blue: 0, alpha: 1.0)
+            colors.append(color)
+            print(1.0-(Float(i)/5.0))
         }
         
-        return colors[self.taskCode];
+        return colors[self.getTaskCode()]
         
     }
     

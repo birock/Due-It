@@ -8,18 +8,24 @@
 
 import UIKit
 
+var userTasks = [Task]()
+
 class AddTaskViewController: UIViewController {
     
-    
     @IBOutlet weak var input: UITextField!
-    
+    @IBOutlet weak var dateInput: UIDatePicker!
+    @IBOutlet weak var urgencyInput: UISlider!
     
     @IBAction func add_item(_ sender: Any) {
         
         if (input.text != "") {
+            let newTask = Task(name: input.text!, urgency: Int(urgencyInput.value), date: dateInput.date)
+            userTasks.append(newTask)
             list.append(input.text!)
         }
+        
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
