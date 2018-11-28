@@ -49,20 +49,35 @@ class Task: NSObject {
         //let a = Calendar.current.compo
         //let a = Calendar.current.com
         
-        if(daysBetween.day! >= 14){
+        if(daysBetween.day! >= 30){
             self.dateCode = 1;
         }
-        else if(daysBetween.day! >= 7){
+        else if(daysBetween.day! >= 20){
             self.dateCode = 2;
         }
-        else if(daysBetween.day! >= 5){
+        else if(daysBetween.day! >= 14){
             self.dateCode = 3;
         }
-        else if(daysBetween.day! >= 3){
+        else if(daysBetween.day! >= 10){
             self.dateCode = 4;
         }
-        else{
+        else if(daysBetween.day! >= 7) {
             self.dateCode = 5;
+        }
+        else if(daysBetween.day! >= 5) {
+            self.dateCode = 6;
+        }
+        else if(daysBetween.day! >= 4) {
+            self.dateCode = 7;
+        }
+        else if(daysBetween.day! >= 3) {
+            self.dateCode = 8;
+        }
+        else if(daysBetween.day! >= 2) {
+            self.dateCode = 9;
+        }
+        else{
+            self.dateCode = 10;
         }
         
         print("Date code: ", self.dateCode)
@@ -81,16 +96,16 @@ class Task: NSObject {
         
         var colors = [UIColor]()
         
-        for i in 1...5 {
-            var color = UIColor(red: (CGFloat(Float(i)/5.0)), green: 1.0, blue: 0, alpha: 0.7)
+        for i in 1...10 {
+            var color = UIColor(red: (CGFloat(Float(i)/10.0)), green: 1.0, blue: 0, alpha: 0.7)
             colors.append(color);
-            print((Float(i)/5.0))
+            print((Float(i)/10.0))
         }
         
-        for i in 1...5 {
-            var color = UIColor(red: 1.0, green: (CGFloat(1.0-(Float(i)/5.0))), blue: 0, alpha: 0.7)
+        for i in 1...10 {
+            var color = UIColor(red: 1.0, green: (CGFloat(1.0-(Float(i)/10.0))), blue: 0, alpha: 0.7)
             colors.append(color)
-            print(1.0-(Float(i)/5.0))
+            print(1.0-(Float(i)/10.0))
         }
         
         return colors[self.getTaskCode()-1]
