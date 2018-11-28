@@ -97,13 +97,13 @@ class Task: NSObject {
         var colors = [UIColor]()
         
         for i in 1...10 {
-            var color = UIColor(red: (CGFloat(Float(i)/10.0)), green: 1.0, blue: 0, alpha: 0.7)
+            var color = UIColor(red: (CGFloat(Float(i)/10.0)), green: 1.0, blue: 0, alpha: 0.9)
             colors.append(color);
             print((Float(i)/10.0))
         }
         
         for i in 1...10 {
-            var color = UIColor(red: 1.0, green: (CGFloat(1.0-(Float(i)/10.0))), blue: 0, alpha: 0.7)
+            var color = UIColor(red: 1.0, green: (CGFloat(1.0-(Float(i)/10.0))), blue: 0, alpha: 0.9)
             colors.append(color)
             print(1.0-(Float(i)/10.0))
         }

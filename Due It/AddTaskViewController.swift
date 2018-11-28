@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import SceneKit
+import SpriteKit
 
 var userTasks = [Task]()
 
 class AddTaskViewController: UIViewController {
-    
     
     @IBOutlet weak var input: UITextField!
     @IBOutlet weak var dateInput: UIDatePicker!
@@ -41,7 +42,25 @@ class AddTaskViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        /*
+        sceneView = SKView(frame: CGRect(x: 0, y: 0, width: 666, height: 500))
+        sceneView.backgroundColor = UIColor.black
+        self.view.addSubview(sceneView)
         
+        if let view = self.sceneView as SKView? {
+            // Load the SKScene from 'GameScene.sks'
+            if let scene = SKScene(fileNamed: "particles") {
+                // Set the scale mode to scale to fit the window
+                scene.scaleMode = .aspectFill
+                
+                // Present the scene
+                view.presentScene(scene)
+            }
+            
+            view.ignoresSiblingOrder = true
+            
+        }
+ */
     }
     
     
