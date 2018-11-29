@@ -7,6 +7,8 @@ target 'Due It' do
 
   # Pods for Due It
   pod 'Firebase/Core'
+  pod 'Firebase/Auth' #raab adding auth for login authentication 
+  pod 'Firebase/Database' #raab adding database to save user info
   
   target 'Due ItTests' do
     inherit! :search_paths

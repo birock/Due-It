@@ -9,10 +9,16 @@
 import UIKit
 import SceneKit
 import SpriteKit
+//Raab adding firebase for database storage
+import Firebase
+//import FirebaseDatabase
 
 var userTasks = [Task]()
 
 class AddTaskViewController: UIViewController {
+    
+    //list for database
+   // var toDueList: DatabaseReference!
     
     @IBOutlet weak var input: UITextField!
     @IBOutlet weak var dateInput: UIDatePicker!
@@ -34,13 +40,29 @@ class AddTaskViewController: UIViewController {
             let newTask = Task(name: input.text!, urgency: Int(urgencyInput.value), date: dateInput.date)
             userTasks.append(newTask)
             list.append(input.text!)
+            
+          //addToDataBase()
         }
         
     }
+    /*
+    //Add to DB
+    func addToDataBase(){
+        //adding to database list
+        let key=toDueList.childByAutoId().key
+        let task=userTasks
+        toDueList.child(key!).setValue(task)
+    }
+ */
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //firebase
+        //FirebaseApp.configure()
+        //toDueList=Database.database().reference().child("tasks")
+        
         // Do any additional setup after loading the view.
         /*
         sceneView = SKView(frame: CGRect(x: 0, y: 0, width: 666, height: 500))
