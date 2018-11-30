@@ -7,6 +7,8 @@
 //
 
 import UIKit
+//adding firebase for database storage
+import FirebaseDatabase
 
 var list = [String]()
 var numFinished = 0
@@ -15,7 +17,8 @@ var numFinished = 0
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var tasks = list;
-
+    
+   
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -31,6 +34,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return(task)
     }
     
+    /* commenting out bens function to try creating edit
+     
     func tableView(_ tableview: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
             self.tasks.remove(at: indexPath.row)
@@ -39,6 +44,60 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             list = tasks
             myTableView.reloadData()
         }
+   
+    }
+ */
+    
+    //Raab testing a delete and edit function
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        //let task=tasks[indexPath.row]
+        //edit
+        let editTask=UITableViewRowAction(style: .default, title: "Edit") { (action, indexPath) in
+            //call edit task function
+            print(".........edit..........")
+            self.editT(indexPath: indexPath)
+        }
+        //delete
+        let deleteTask=UITableViewRowAction(style: .default, title: "Delete") { (action, indexPath) in
+            //call delete task function
+            print("..........delete..................")
+            self.deleteT(indexPath: indexPath)
+        }
+        
+        editTask.backgroundColor = .blue
+        deleteTask.backgroundColor = .red
+        return [editTask, deleteTask]
+    }
+    
+    //function to edit task
+    private func editT(indexPath: IndexPath){
+        print(".......made it here.........")
+        //go to edit view
+        let storyboard:UIStoryboard=UIStoryboard(name:"Main", bundle:nil)
+        let EditVC:EditTaskViewController=storyboard.instantiateViewController(withIdentifier: "EditTaskViewController") as! EditTaskViewController
+        self.present(EditVC, animated: true, completion: nil)
+        
+        //send tasks info to the edit screen
+        EditVC.view.backgroundColor = userTasks[indexPath.row].getTaskColor()
+        EditVC.editTaskTitle.text=userTasks[indexPath.row].getTaskName()
+        
+        EditVC.setDate(Date: userTasks[indexPath.row].getDueDate())
+        
+        EditVC.getRow(indexPath: indexPath)
+        
+        EditVC.editUrgency.value=Float(userTasks[indexPath.row].urgencyCode)
+        
+    }
+    //function to delete task
+    private func deleteT(indexPath: IndexPath){
+      
+        self.tasks.remove(at: indexPath.row)
+        numFinished += 1
+        print("Tasks Completed: ", numFinished)
+        //self.tableView?.deleteRows(at: [indexPath], with: .automatic)
+        list = tasks
+        myTableView.reloadData()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -51,10 +110,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
-        
+       
+  
+
+
     }
-
-
 }
 

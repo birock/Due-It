@@ -11,6 +11,7 @@
 		3F86EB1021AF2BEA0099C1C1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3F86EB0F21AF2BEA0099C1C1 /* GoogleService-Info.plist */; };
 		3F86EB1221AF2BF20099C1C1 /* DueItLogo_Launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F86EB1121AF2BF20099C1C1 /* DueItLogo_Launch.png */; };
 		3F86EB1421AF2E890099C1C1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F86EB1321AF2E890099C1C1 /* LoginViewController.swift */; };
+		3FA85F8E21B1AC8400B8A3C3 /* EditTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA85F8D21B1AC8400B8A3C3 /* EditTaskViewController.swift */; };
 		5B843D6821ADFD3B00425B55 /* taskParticles.scnp in Resources */ = {isa = PBXBuildFile; fileRef = 5B843D6621ADFD3B00425B55 /* taskParticles.scnp */; };
 		5B843D6921ADFD3B00425B55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B843D6721ADFD3B00425B55 /* Assets.xcassets */; };
 		5B843D6B21AE553800425B55 /* particles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5B843D6A21AE553800425B55 /* particles.sks */; };
@@ -51,6 +52,7 @@
 		3F86EB0F21AF2BEA0099C1C1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3F86EB1121AF2BF20099C1C1 /* DueItLogo_Launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DueItLogo_Launch.png; sourceTree = "<group>"; };
 		3F86EB1321AF2E890099C1C1 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		3FA85F8D21B1AC8400B8A3C3 /* EditTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskViewController.swift; sourceTree = "<group>"; };
 		59C73E4BB5AF51A4457F823D /* Pods_Due_ItUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Due_ItUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B58384A21ACA68C00D8511E /* DueIt_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = DueIt_Logo.png; path = Assets.xcassets/DueIt_Logo.imageset/DueIt_Logo.png; sourceTree = "<group>"; };
 		5B843D6621ADFD3B00425B55 /* taskParticles.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = taskParticles.scnp; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				61DD3FDE219A2D4A00020E7B /* Main.storyboard */,
 				3F86EB1321AF2E890099C1C1 /* LoginViewController.swift */,
 				5B935B1521AA2E92004ED88C /* AddTaskViewController.swift */,
+				3FA85F8D21B1AC8400B8A3C3 /* EditTaskViewController.swift */,
 				5B58384A21ACA68C00D8511E /* DueIt_Logo.png */,
 				61DD3FE1219A2D4D00020E7B /* Assets.xcassets */,
 				61DD3FE3219A2D4D00020E7B /* LaunchScreen.storyboard */,
@@ -432,6 +435,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B929BCF21A9B69A00CCA9F7 /* Task.swift in Sources */,
+				3FA85F8E21B1AC8400B8A3C3 /* EditTaskViewController.swift in Sources */,
 				5B935B1621AA2E92004ED88C /* AddTaskViewController.swift in Sources */,
 				61DD3FDD219A2D4A00020E7B /* ViewController.swift in Sources */,
 				3F86EB1421AF2E890099C1C1 /* LoginViewController.swift in Sources */,

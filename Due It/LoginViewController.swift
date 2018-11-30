@@ -8,7 +8,7 @@
 
 import UIKit
 import FirebaseAuth
-
+import FirebaseDatabase
 
 class LoginViewController: UIViewController {
 //variables and funcitons for creating user login
@@ -29,6 +29,19 @@ class LoginViewController: UIViewController {
                 }
                 //account created
                 print("Success")
+                
+                
+                //database ref
+                let ref=Database.database().reference()
+                //let userRef=ref.child("users")
+                let userRef = ref.child("users").child(user!.user.uid)
+               // https://due-it-d25a8.firebaseio.com/users
+             
+                userRef.setValue(["email":email])
+                
+                
+                
+                //go to to due list screen
                 self.goToApp()
             }
         }
@@ -46,6 +59,9 @@ class LoginViewController: UIViewController {
                 }
                 //no error
                 print("success")
+
+                
+                //go to to due list screen
                 self.goToApp()
             }
 
@@ -59,6 +75,7 @@ class LoginViewController: UIViewController {
         
     }
     
+    //Go to the to DUE list screen
     func goToApp(){
         let storyboard:UIStoryboard=UIStoryboard(name:"Main", bundle:nil)
         let viewController:ViewController=storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController

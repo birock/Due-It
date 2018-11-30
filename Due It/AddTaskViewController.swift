@@ -10,8 +10,8 @@ import UIKit
 import SceneKit
 import SpriteKit
 //Raab adding firebase for database storage
-import Firebase
-//import FirebaseDatabase
+import FirebaseDatabase
+
 
 var userTasks = [Task]()
 
@@ -19,6 +19,11 @@ class AddTaskViewController: UIViewController {
     
     //list for database
    // var toDueList: DatabaseReference!
+    //database vars
+    var ref:DatabaseReference?
+    var handle:DatabaseHandle?
+    var userList:[Task]=[]
+    
     
     @IBOutlet weak var input: UITextField!
     @IBOutlet weak var dateInput: UIDatePicker!
@@ -42,6 +47,10 @@ class AddTaskViewController: UIViewController {
             list.append(input.text!)
             
           //addToDataBase()
+           // ref?.child("list").childByAutoId().setValue(newTask)
+            
+            
+            
         }
         
     }
@@ -59,6 +68,15 @@ class AddTaskViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //Syncing with Database
+        handle=ref?.child("tasks").observe(.childAdded, with: {(snapshot) in
+            if let item=snapshot.value as? Task{
+                self.userList.append(item)
+                //self.myTableView.reloadData()
+                self.ref?.keepSynced(true)
+            }
+            
+        })
         //firebase
         //FirebaseApp.configure()
         //toDueList=Database.database().reference().child("tasks")
