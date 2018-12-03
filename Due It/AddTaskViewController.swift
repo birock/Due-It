@@ -11,6 +11,8 @@ import SceneKit
 import SpriteKit
 //Raab adding firebase for database storage
 import FirebaseDatabase
+import FirebaseAuth
+import Firebase
 
 
 var userTasks = [Task]()
@@ -47,10 +49,18 @@ class AddTaskViewController: UIViewController {
             list.append(input.text!)
             
           //addToDataBase()
-           // ref?.child("list").childByAutoId().setValue(newTask)
+           //ref?.child("tasks").childByAutoId().setValue(newTask)
+           
+        //raab
+        let dRef = Database.database().reference()
+        //let tName: String = input.text!
             
-            
-            
+        let userID = Auth.auth().currentUser?.uid
+            print("current user id: ", userID!)
+        
+        dRef.child("users").child(userID!).child("tasks").setValue(list)
+        
+        
         }
         
     }

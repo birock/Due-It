@@ -9,17 +9,31 @@
 import UIKit
 //adding firebase for database storage
 import FirebaseDatabase
+import Firebase
 
 var list = [String]()
 var numFinished = 0
 
 
+
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    
+    var ref: DatabaseReference!
+    
+    
+    let userEmail=""
     
     var tasks = list;
     
-   
+    var dbTaskList=[String]()
     
+    func tasksExisting(dbTasks: [String]){
+        //userTasks.append(dbTasks)
+        //tasks.append(contentsOf: dbTasks)
+        dbTaskList.append(contentsOf: dbTasks)
+        
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return (tasks.count);
@@ -30,7 +44,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let task = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "Task")
         task.backgroundColor = userTasks[indexPath.row].getTaskColor()
         task.textLabel?.text = tasks[indexPath.row]
-
+        
+        
         return(task)
     }
     
@@ -110,10 +125,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-       
-  
-
-
-    }
+        
+    
 }
 
+}
