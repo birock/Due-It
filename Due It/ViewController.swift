@@ -106,12 +106,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     //function to delete task
     private func deleteT(indexPath: IndexPath){
       
-        self.tasks.remove(at: indexPath.row)
+        userTasks.remove(at: indexPath.row)
         numFinished += 1
         print("Tasks Completed: ", numFinished)
         //self.tableView?.deleteRows(at: [indexPath], with: .automatic)
         list = tasks
+        userTasks.sort { (first, second) -> Bool in
+            if(first.taskCode > second.taskCode){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        list.removeAll()
+        for i in 0..<userTasks.count {
+            list.append(userTasks[i].getTaskName())
+        }
+        tasks = list;
         myTableView.reloadData()
+
         
     }
     
@@ -129,7 +143,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             list.append(userTasks[i].getTaskName())
         }
         tasks = list;
-        myTableView.reloadData()
         myTableView.reloadData()
     }
     
