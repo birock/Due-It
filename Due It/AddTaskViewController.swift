@@ -44,9 +44,22 @@ class AddTaskViewController: UIViewController {
     @IBAction func add_item(_ sender: Any) {
         
         if (input.text != "") {
-            let newTask = Task(name: input.text!, urgency: Int(urgencyInput.value), date: dateInput.date)
-            userTasks.append(newTask)
-            list.append(input.text!)
+            if (input.text != "") {
+                let newTask = Task(name: input.text!, urgency: Int(urgencyInput.value), date: dateInput.date)
+                userTasks.append(newTask)
+                userTasks.sort { (first, second) -> Bool in
+                    if(first.taskCode > second.taskCode){
+                        return true;
+                    }
+                    else{
+                        return false;
+                    }
+                }
+                list.removeAll()
+                for i in 0..<userTasks.count {
+                    list.append(userTasks[i].getTaskName())
+                }
+            }
             
           //addToDataBase()
            //ref?.child("tasks").childByAutoId().setValue(newTask)

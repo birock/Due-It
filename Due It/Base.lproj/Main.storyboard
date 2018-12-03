@@ -121,6 +121,9 @@
                                 <state key="normal" title="Garden of Productivity">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="sp9-gu-hEV" kind="presentation" id="Wlz-Yi-MBG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="chd-Cf-4gL">
                                 <rect key="frame" x="0.0" y="781" width="210" height="81"/>
@@ -325,8 +328,44 @@
             </objects>
             <point key="canvasLocation" x="1018.840579710145" y="132.58928571428572"/>
         </scene>
+        <!--Garden View Controller-->
+        <scene sceneID="8Nw-11-vIA">
+            <objects>
+                <viewController id="sp9-gu-hEV" customClass="GardenViewController" customModule="Due_It" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xtz-DZ-ab5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="garden_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="o7I-XZ-JVM">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8L1-cG-hXc">
+                                <rect key="frame" x="20" y="44" width="82" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <state key="normal" title="Back"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="Jga-Tp-Lvv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="fIa-bL-h7I"/>
+                    </view>
+                    <connections>
+                        <outlet property="BackgroundImageView" destination="o7I-XZ-JVM" id="jwS-PV-f2b"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PFT-eo-cf2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="261" y="-565"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="garden_background.png" width="1666" height="1666"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="H21-4i-j1i"/>
+        <segue reference="Jga-Tp-Lvv"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -17,6 +17,9 @@
 		5B843D6B21AE553800425B55 /* particles.sks in Resources */ = {isa = PBXBuildFile; fileRef = 5B843D6A21AE553800425B55 /* particles.sks */; };
 		5B929BCF21A9B69A00CCA9F7 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B929BCE21A9B69A00CCA9F7 /* Task.swift */; };
 		5B935B1621AA2E92004ED88C /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B935B1521AA2E92004ED88C /* AddTaskViewController.swift */; };
+		6146E49821B5D65A009D4D19 /* garden_background.png in Resources */ = {isa = PBXBuildFile; fileRef = 6146E49721B5D65A009D4D19 /* garden_background.png */; };
+		6146E49A21B5D6B8009D4D19 /* flower.png in Resources */ = {isa = PBXBuildFile; fileRef = 6146E49921B5D6B7009D4D19 /* flower.png */; };
+		61B2CB1421B5D32E006325A7 /* GardenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B2CB1321B5D32D006325A7 /* GardenViewController.swift */; };
 		61DD3FDB219A2D4A00020E7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DD3FDA219A2D4A00020E7B /* AppDelegate.swift */; };
 		61DD3FDD219A2D4A00020E7B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DD3FDC219A2D4A00020E7B /* ViewController.swift */; };
 		61DD3FE0219A2D4A00020E7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61DD3FDE219A2D4A00020E7B /* Main.storyboard */; };
@@ -60,6 +63,9 @@
 		5B843D6A21AE553800425B55 /* particles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = particles.sks; sourceTree = "<group>"; };
 		5B929BCE21A9B69A00CCA9F7 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		5B935B1521AA2E92004ED88C /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		6146E49721B5D65A009D4D19 /* garden_background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = garden_background.png; sourceTree = SOURCE_ROOT; };
+		6146E49921B5D6B7009D4D19 /* flower.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flower.png; sourceTree = SOURCE_ROOT; };
+		61B2CB1321B5D32D006325A7 /* GardenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GardenViewController.swift; sourceTree = "<group>"; };
 		61DD3FD7219A2D4A00020E7B /* Due It.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Due It.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		61DD3FDA219A2D4A00020E7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61DD3FDC219A2D4A00020E7B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -148,6 +154,7 @@
 				5B843D6621ADFD3B00425B55 /* taskParticles.scnp */,
 				5B843D6A21AE553800425B55 /* particles.sks */,
 				61DD3FDA219A2D4A00020E7B /* AppDelegate.swift */,
+				61B2CB1321B5D32D006325A7 /* GardenViewController.swift */,
 				61DD3FDC219A2D4A00020E7B /* ViewController.swift */,
 				5B929BCE21A9B69A00CCA9F7 /* Task.swift */,
 				61DD3FDE219A2D4A00020E7B /* Main.storyboard */,
@@ -158,6 +165,8 @@
 				61DD3FE1219A2D4D00020E7B /* Assets.xcassets */,
 				61DD3FE3219A2D4D00020E7B /* LaunchScreen.storyboard */,
 				3F86EB1121AF2BF20099C1C1 /* DueItLogo_Launch.png */,
+				6146E49921B5D6B7009D4D19 /* flower.png */,
+				6146E49721B5D65A009D4D19 /* garden_background.png */,
 				3F86EB0F21AF2BEA0099C1C1 /* GoogleService-Info.plist */,
 				61DD3FE6219A2D4D00020E7B /* Info.plist */,
 			);
@@ -306,7 +315,9 @@
 			files = (
 				3F86EB0E21AF2BB10099C1C1 /* DueIt_Logo.png in Resources */,
 				3F86EB1021AF2BEA0099C1C1 /* GoogleService-Info.plist in Resources */,
+				6146E49821B5D65A009D4D19 /* garden_background.png in Resources */,
 				5B843D6821ADFD3B00425B55 /* taskParticles.scnp in Resources */,
+				6146E49A21B5D6B8009D4D19 /* flower.png in Resources */,
 				61DD3FE5219A2D4D00020E7B /* LaunchScreen.storyboard in Resources */,
 				61DD3FE2219A2D4D00020E7B /* Assets.xcassets in Resources */,
 				5B843D6B21AE553800425B55 /* particles.sks in Resources */,
@@ -435,6 +446,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B929BCF21A9B69A00CCA9F7 /* Task.swift in Sources */,
+				61B2CB1421B5D32E006325A7 /* GardenViewController.swift in Sources */,
 				3FA85F8E21B1AC8400B8A3C3 /* EditTaskViewController.swift in Sources */,
 				5B935B1621AA2E92004ED88C /* AddTaskViewController.swift in Sources */,
 				61DD3FDD219A2D4A00020E7B /* ViewController.swift in Sources */,
