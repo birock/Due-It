@@ -42,10 +42,11 @@ class AddTaskViewController: UIViewController {
     }
     
     @IBAction func add_item(_ sender: Any) {
+        let newTask = Task(name: input.text!, urgency: Int(urgencyInput.value), date: dateInput.date)
         
         if (input.text != "") {
             if (input.text != "") {
-                let newTask = Task(name: input.text!, urgency: Int(urgencyInput.value), date: dateInput.date)
+                
                 userTasks.append(newTask)
                 userTasks.sort { (first, second) -> Bool in
                     if(first.taskCode > second.taskCode){
@@ -64,15 +65,18 @@ class AddTaskViewController: UIViewController {
           //addToDataBase()
            //ref?.child("tasks").childByAutoId().setValue(newTask)
            
-        //raab
         let dRef = Database.database().reference()
-        //let tName: String = input.text!
+
             
         let userID = Auth.auth().currentUser?.uid
             print("current user id: ", userID!)
         
-        dRef.child("users").child(userID!).child("tasks").setValue(list)
-        
+            dRef.child("users").child(userID!).child("tasks").child(input.text!).setValue(input.text!)
+        dRef.child("users").child(userID!).child("tasks").child(input.text!).child("urgencyCode").setValue(urgencyInput.value)
+        dRef.child("users").child(userID!).child("tasks").child(input.text!).child("dateCode").setValue(newTask.getDateCode())
+            
+          
+            
         
         }
         

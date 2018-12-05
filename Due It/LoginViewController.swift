@@ -37,11 +37,8 @@ class LoginViewController: UIViewController {
                 let ref=Database.database().reference()
                 //let userRef=ref.child("users")
                 let userRef = ref.child("users").child(user!.user.uid)
-                let tasks=[""] //new task list
-                userRef.setValue(["email":email, "tasks":tasks])
-                
-               
-                //userRef.child("Task List").setValue(tasks)
+                userRef.setValue(["email":email])
+
 
                 //go to to due list screen
                 self.goToApp()
@@ -90,19 +87,39 @@ class LoginViewController: UIViewController {
         let userID = Auth.auth().currentUser?.uid
         //print("current user id: ", userID!)
         
-        let r=dRef.child("users").child(userID!).child("tasks")
-        r.observe(.value){ snapshot in
-            for child in snapshot.children{
-                
-                let task=child as! DataSnapshot
-                let t=task.value as! String
-                
-                self.tasks.append(t)
-                print("added t: ",t)
-                //list.append(t)
-            }
+        
+        let r = dRef.child("users").child(userID!)
+        r.observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get all user informaiton
+            let value = snapshot.value as? NSDictionary
+            //get the email from the database
+            let email = value?["email"] as? String ?? ""
+            //get a dictionary full of task NSDictionaries
+            let tasks = value?["tasks"] as? NSDictionary
             
+            //iterate through each task dictionary
+            for (key, value) in tasks!{
+                //for the current task, find all the information
+                let task = tasks?[key] as! NSDictionary
+                let dateCode = task["dateCode"] as? Int
+                print(dateCode)
+            }
+        }) { (error) in
+            print(error.localizedDescription)
         }
+        
+
+//        r.observe(.value){ snapshot in
+//            for child in snapshot.children{
+//
+//                let task=child as! DataSnapshot
+////
+////                self.tasks.append(t)
+////                print("added t: ",t)
+//                //list.append(t)
+//            }
+//
+//        }
         
         viewController.tasksExisting(dbTasks: tasks)
         
