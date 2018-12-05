@@ -124,6 +124,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             list.append(userTasks[i].getTaskName())
         }
         tasks = list;
+        
+        let dRef = Database.database().reference()
+        let userID = Auth.auth().currentUser?.uid
+        dRef.child("users").child(userID!).child("tasks").removeValue()
+
+        for task in userTasks{
+
+
+            dRef.child("users").child(userID!).child("tasks").child(task.getTaskName()).setValue(task.getTaskName())
+            dRef.child("users").child(userID!).child("tasks").child(task.getTaskName()).child("urgencyCode").setValue(Int(task.urgencyCode))
+
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let dateString = dateFormatter.string(from: task.getDueDate())
+            dRef.child("users").child(userID!).child("tasks").child(task.getTaskName()).child("date").setValue(dateString)
+
+
+        }
         myTableView.reloadData()
 
         
@@ -143,6 +161,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             list.append(userTasks[i].getTaskName())
         }
         tasks = list;
+        
+        let dRef = Database.database().reference()
+        let userID = Auth.auth().currentUser?.uid
+        dRef.child("users").child(userID!).child("tasks").removeValue()
+        
+        for task in userTasks{
+            
+            
+            dRef.child("users").child(userID!).child("tasks").child(task.getTaskName()).setValue(task.getTaskName())
+            dRef.child("users").child(userID!).child("tasks").child(task.getTaskName()).child("urgencyCode").setValue(Int(task.urgencyCode))
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let dateString = dateFormatter.string(from: task.getDueDate())
+            dRef.child("users").child(userID!).child("tasks").child(task.getTaskName()).child("date").setValue(dateString)
+            
+            
+        }
         myTableView.reloadData()
     }
     
