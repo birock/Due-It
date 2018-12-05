@@ -98,11 +98,13 @@ class LoginViewController: UIViewController {
             let tasks = value?["tasks"] as? NSDictionary
             
             //iterate through each task dictionary
-            for (key, value) in tasks!{
-                //for the current task, find all the information
-                let task = tasks?[key] as! NSDictionary
-                let dateCode = task["dateCode"] as? Int
-                print(dateCode)
+            if tasks != nil{
+                for (key, value) in tasks!{
+                    //for the current task, find all the information
+                    let task = tasks?[key] as! NSDictionary
+                    let dateCode = task["dateCode"] as? Int
+                    print(dateCode)
+                }
             }
         }) { (error) in
             print(error.localizedDescription)
