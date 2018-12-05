@@ -72,8 +72,12 @@ class AddTaskViewController: UIViewController {
             print("current user id: ", userID!)
         
             dRef.child("users").child(userID!).child("tasks").child(input.text!).setValue(input.text!)
-        dRef.child("users").child(userID!).child("tasks").child(input.text!).child("urgencyCode").setValue(urgencyInput.value)
-        dRef.child("users").child(userID!).child("tasks").child(input.text!).child("dateCode").setValue(newTask.getDateCode())
+        dRef.child("users").child(userID!).child("tasks").child(input.text!).child("urgencyCode").setValue(Int(urgencyInput.value))
+            
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+            let dateString = dateFormatter.string(from: dateInput.date)
+            dRef.child("users").child(userID!).child("tasks").child(input.text!).child("date").setValue(dateString)
             
           
             

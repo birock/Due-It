@@ -102,8 +102,17 @@ class LoginViewController: UIViewController {
                 for (key, value) in tasks!{
                     //for the current task, find all the information
                     let task = tasks?[key] as! NSDictionary
-                    let dateCode = task["dateCode"] as? Int
-                    print(dateCode)
+                    let tDate = task["date"] as? String
+                    let urgencyCode = task["urgencyCode"] as? Int
+                    
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                    let dateObj = dateFormatter.date(from: tDate!)
+                    
+                    let newTask = Task(name: key as! String, urgency: urgencyCode!, date: dateObj!)
+                    userTasks.append(newTask)
+                    
+
                 }
             }
         }) { (error) in
